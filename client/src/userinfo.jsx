@@ -32,7 +32,9 @@ class Userinfo extends React.Component {
                     console.log('clickd')
                     e.preventDefault()
                     this.props.search(this.state.textOne,this.state.textTwo,this.state.textThree)
-                    this.setState({textOne : '', textTwo : '', textThree : ''})
+                    this.setState({textOne : ''})
+                    this.setState({textTwo : ''})
+                    this.setState({textThree : ''})
                     $("#userinfoclick").html("SENT!")
                     
                     }
