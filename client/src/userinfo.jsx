@@ -21,11 +21,11 @@ class Userinfo extends React.Component {
         //console.log('proof that seamus is a god', this.state.textOne)
         return(<div>
             <form id="userinfo">
-                <input placeholder="First/Last Name" onChange={(e) => this.setState({textOne : e.target.value})}></input>
+                <input id="username" placeholder="First/Last Name..." onChange={(e) => this.setState({textOne : e.target.value})}></input>
                 <div>Enter your First/Last Name</div><p></p><p></p>
-                <input placeholder="Workout" onChange={(e) => this.setState({textTwo : e.target.value})}></input>
+                <input id="userworkout" placeholder="Workout..." onChange={(e) => this.setState({textTwo : e.target.value})}></input>
                 <div>Enter your workout of choice (chest/back/legs/challenge)</div><p></p><p></p>
-                <input placeholder="1234567890" onChange={(e) => this.setState({textThree : e.target.value})}></input>
+                <input id="usernumber" placeholder="1234567890..." onChange={(e) => this.setState({textThree : e.target.value})}></input>
                 <div>Enter your Phone Number (Include area code) (no dashes)</div><p></p><p></p>
                 <button id="userinfoclick" 
                 onClick={(e) => {
