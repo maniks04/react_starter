@@ -21,18 +21,20 @@ class Userinfo extends React.Component {
         //console.log('proof that seamus is a god', this.state.textOne)
         return(<div>
             <form id="userinfo">
-                <input id="username" placeholder="First/Last Name..." onChange={(e) => this.setState({textOne : e.target.value})}></input>
+                <input id="username" value={this.state.textOne} placeholder="First/Last Name..." onChange={(e) => this.setState({textOne : e.target.value})}></input>
                 <div>Enter your First/Last Name</div><p></p><p></p>
-                <input id="userworkout" placeholder="Workout..." onChange={(e) => this.setState({textTwo : e.target.value})}></input>
+                <input id="userworkout" value={this.state.textTwo} placeholder="Workout..." onChange={(e) => this.setState({textTwo : e.target.value})}></input>
                 <div>Enter your workout of choice (chest/back/legs/challenge)</div><p></p><p></p>
-                <input id="usernumber" placeholder="1234567890..." onChange={(e) => this.setState({textThree : e.target.value})}></input>
+                <input id="usernumber" value={this.state.textThree} placeholder="1234567890..." onChange={(e) => this.setState({textThree : e.target.value})}></input>
                 <div>Enter your Phone Number (Include area code) (no dashes)</div><p></p><p></p>
                 <button id="userinfoclick" 
                 onClick={(e) => {
                     console.log('clickd')
                     e.preventDefault()
                     this.props.search(this.state.textOne,this.state.textTwo,this.state.textThree)
-                    //this.setState({textOne : ''})
+                    this.setState({textOne : '', textTwo : '', textThree : ''})
+                    $("#userinfoclick").html("SENT!")
+                    
                     }
                         }>
                     Text me my Workout!
