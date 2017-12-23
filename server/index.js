@@ -4,6 +4,7 @@ var request = require('request')
 var app = express();
 var twilio = require('twilio');
 var axios = require('axios')
+let db = require('../database/index.js');
 
 
 app.use(express.static(__dirname + '/../client/dist'));
@@ -14,7 +15,7 @@ app.post('/', function(req, res) {
   
 })
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() {
   console.log('listening on port 3000!');
 });
 
@@ -46,7 +47,11 @@ app.post('/fitness/workout', function(req, res) {
   var back = greeting + "3 SETS" + "\n" + "10X Pull-ups" + "\n" + "15X Lower-back Extensions"
   + "\n" + "\n" + "3 SETS" + "\n" + "15X Single-arm Row (each arm)" + "\n" + "10X Lat Pull-down"
 
-  var challenge = greeting + "WELCOME TO THE DAILY CHALLENGE"
+  var challenge = greeting +
+  "Warm up on a treadmill/bike/jump-rope" + "\n" + "5 SETS" + "\n" + "10X Squat-jumps" + "\n" + "10X Push-ups" +
+  "\n" + "3 SETS" + "\n" + "60 Seconds ab workout" + "\n" + "(change ab workout each time!)" + "\n" +
+  "3 SETS" + "\n" + "15X Bicep curls" + "\n" + "10X Dead-lift" + "\n" + "3 SETS" + "\n" + "10X Shoulder press" + 
+  "\n" + "10X Jumping Lunges (each leg)" + "\n" + "Cool off on a treadmill/bike/jump-rope"
   
   var workOutStorage = [chest, legs, back, challenge]
   

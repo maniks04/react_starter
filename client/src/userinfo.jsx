@@ -22,16 +22,18 @@ class Userinfo extends React.Component {
         return(<div>
             <form id="userinfo">
                 <input placeholder="First/Last Name" onChange={(e) => this.setState({textOne : e.target.value})}></input>
-                <div>Enter your First/Last Name</div><p></p>
+                <div>Enter your First/Last Name</div><p></p><p></p>
                 <input placeholder="Workout" onChange={(e) => this.setState({textTwo : e.target.value})}></input>
-                <div>Enter your workout of choice (chest/back/legs/challenge)</div><p></p>
+                <div>Enter your workout of choice (chest/back/legs/challenge)</div><p></p><p></p>
                 <input placeholder="1234567890" onChange={(e) => this.setState({textThree : e.target.value})}></input>
-                <div>Enter your Phone Number (Include area code) (no dashes)</div><p></p>
+                <div>Enter your Phone Number (Include area code) (no dashes)</div><p></p><p></p>
                 <button id="userinfoclick" 
                 onClick={(e) => {
                     console.log('clickd')
                     e.preventDefault()
-                    this.props.search(this.state.textOne,this.state.textTwo,this.state.textThree)}
+                    this.props.search(this.state.textOne,this.state.textTwo,this.state.textThree)
+                    //this.setState({textOne : ''})
+                    }
                         }>
                     Text me my Workout!
                 </button>
